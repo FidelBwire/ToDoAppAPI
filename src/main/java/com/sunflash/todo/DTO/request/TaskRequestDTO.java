@@ -8,6 +8,9 @@ import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.sunflash.todo.custom_validations.annotation.AsignedUsers;
+import com.sunflash.todo.custom_validations.annotation.ProjectId;
+
 public class TaskRequestDTO {
 
 	@Size(min = 1, max = 100, message = "Title must be between 1 to 100 characters")
@@ -24,8 +27,10 @@ public class TaskRequestDTO {
 	@Future(message = "Scheduled completion date must be a future date")
 	private Timestamp scheduledCompletionDate;
 
+	@AsignedUsers(message = "Only valid existing usernames are allowed")
 	private Set<String> asignedUsers;
 
+	@ProjectId(message = "Invalid project id")
 	private Long projectId;
 
 	public TaskRequestDTO() {

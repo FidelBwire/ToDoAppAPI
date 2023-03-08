@@ -42,7 +42,6 @@ public class AuthController {
 
 	@PostMapping("/signin")
 	public ResponseEntity<SignInResponse> signin(@Valid @RequestBody SignInRequest request) {
-		System.out.println("request: " + request);
 		Authentication authentication = null;
 		try {
 			authentication = authenticationManager

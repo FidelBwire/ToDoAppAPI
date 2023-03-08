@@ -5,11 +5,15 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
+import com.sunflash.todo.enums.TaskStatus;
 
 @Entity
 @Table(name = "TasksView")
@@ -27,13 +31,20 @@ public class TaskResponseDTO {
 	private String createdBy;
 	private Timestamp createdOn;
 	@Column(name = "created_by_id")
-	private Long craetorId;
+	private Long creatorId;
 	private String updatedBy;
 	private Timestamp updatedOn;
 	@Column(name = "updated_by_id")
 	private Long updatorId;
 	@Transient
 	private Set<String> asignedUsers;
+	private Long reportId;
+	@Column(name = "content")
+	private String report;
+	private Timestamp reportSubmissionDate;
+	@Enumerated(EnumType.STRING)
+	private TaskStatus taskStatus;
+	private Timestamp reportUpdateDate;
 
 	public TaskResponseDTO() {
 		super();
@@ -111,12 +122,12 @@ public class TaskResponseDTO {
 		this.createdOn = createdOn;
 	}
 
-	public Long getCraetorId() {
-		return craetorId;
+	public Long getCreatorId() {
+		return creatorId;
 	}
 
-	public void setCraetorId(Long craetorId) {
-		this.craetorId = craetorId;
+	public void setCreatorId(Long creatorId) {
+		this.creatorId = creatorId;
 	}
 
 	public String getUpdatedBy() {
@@ -149,6 +160,46 @@ public class TaskResponseDTO {
 
 	public void setAsignedUsers(Set<String> asignedUsers) {
 		this.asignedUsers = asignedUsers;
+	}
+
+	public Long getReportId() {
+		return reportId;
+	}
+
+	public void setReportId(Long reportId) {
+		this.reportId = reportId;
+	}
+
+	public String getReport() {
+		return report;
+	}
+
+	public void setReport(String report) {
+		this.report = report;
+	}
+
+	public Timestamp getReportSubmissionDate() {
+		return reportSubmissionDate;
+	}
+
+	public void setReportSubmissionDate(Timestamp reportSubmissionDate) {
+		this.reportSubmissionDate = reportSubmissionDate;
+	}
+
+	public TaskStatus getTaskStatus() {
+		return taskStatus;
+	}
+
+	public void setTaskStatus(TaskStatus taskStatus) {
+		this.taskStatus = taskStatus;
+	}
+
+	public Timestamp getReportUpdateDate() {
+		return reportUpdateDate;
+	}
+
+	public void setReportUpdateDate(Timestamp reportUpdateDate) {
+		this.reportUpdateDate = reportUpdateDate;
 	}
 
 }

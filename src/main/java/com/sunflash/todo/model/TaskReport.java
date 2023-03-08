@@ -42,7 +42,7 @@ public class TaskReport {
 	@Column(nullable = false, updatable = false)
 	private Timestamp postedOn;
 
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	private User updatedBy;
 
 	@UpdateTimestamp

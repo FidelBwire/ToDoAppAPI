@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.sunflash.todo.DTO.response.ProjectResponseDTO;
 
-public interface ProjectResponseDTORepository extends JpaRepository<ProjectResponseDTO, Long> {
+public interface ProjectViewRepository extends JpaRepository<ProjectResponseDTO, Long> {
 
 	List<ProjectResponseDTO> findByCreatedBy(String username);
 

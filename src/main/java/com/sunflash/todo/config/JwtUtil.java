@@ -31,7 +31,6 @@ public class JwtUtil {
 			Claims body = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody();
 			return body.getSubject();
 		} catch (Exception e) {
-			System.out.println(e.getMessage() + " => " + e);
 		}
 
 		return null;

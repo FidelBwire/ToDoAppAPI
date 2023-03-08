@@ -1,6 +1,7 @@
 package com.sunflash.todo.service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.data.domain.Page;
 
@@ -13,5 +14,8 @@ public interface TaskService {
 
 	Page<TaskResponseDTO> getTasks(HttpServletRequest httpServletRequest, int page, int size, String sortBy,
 			String direction);
+
+	TaskResponseDTO updateTask(HttpServletRequest httpServletRequest, Long taskId,
+			@Valid TaskRequestDTO taskRequestDTO);
 
 }

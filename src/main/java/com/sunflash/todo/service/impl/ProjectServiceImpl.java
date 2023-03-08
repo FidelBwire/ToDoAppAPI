@@ -16,7 +16,7 @@ import com.sunflash.todo.enums.UserRole;
 import com.sunflash.todo.model.Project;
 import com.sunflash.todo.model.User;
 import com.sunflash.todo.repository.ProjectRepository;
-import com.sunflash.todo.repository.ProjectResponseDTORepository;
+import com.sunflash.todo.repository.ProjectViewRepository;
 import com.sunflash.todo.service.ProjectService;
 import com.sunflash.todo.service.UserAuthService;
 
@@ -27,7 +27,7 @@ public class ProjectServiceImpl implements ProjectService {
 	private ProjectRepository projectRepository;
 
 	@Autowired
-	private ProjectResponseDTORepository projectResponseDTORepository;
+	private ProjectViewRepository projectResponseDTORepository;
 
 	@Autowired
 	private UserAuthService userAuthService;
